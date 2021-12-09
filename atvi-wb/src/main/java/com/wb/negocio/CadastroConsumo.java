@@ -9,7 +9,7 @@ import com.wb.modelo.RG;
 import com.wb.modelo.Servico;
 import com.wb.modelo.Telefone;
 
-public class CadastroConsumo extends Listagem {
+public class CadastroConsumo extends Cadastro {
 	private List<Cliente> clientes;
 	private List<Produto> produtos;
 	private List<Servico> servicos;
@@ -22,7 +22,7 @@ public class CadastroConsumo extends Listagem {
 	}
 
 	@Override
-	public void listar() {
+	public void cadastrar() {
 		System.out.println("Lista de todos os clientes:");
 		for (Cliente cliente : clientes) {
 			System.out.println("Cliente " + n);

@@ -7,6 +7,7 @@ import com.wb.negocio.CadastroCliente;
 import com.wb.negocio.CadastroConsumo;
 import com.wb.negocio.CadastroProduto;
 import com.wb.negocio.CadastroServico;
+import com.wb.negocio.DeletarConsumo;
 import com.wb.negocio.Listagem;
 import com.wb.negocio.ListarTodosClientes;
 import com.wb.negocio.ListarTodosConsumos;
@@ -36,6 +37,7 @@ public class App {
 			System.out.println("10 - Editar ou deletar cadastro de cliente");
 			System.out.println("11 - Editar ou deletar cadastro de produto");
 			System.out.println("12 - Editar ou deletar cadastro de servico");
+			System.out.println("13 - Deletar consumo");
 			System.out.println("0 - Sair");
 
 			Entrada entrada = new Entrada();
@@ -93,6 +95,10 @@ public class App {
 			case 12:
 				Listagem listagemselecservico = new SelecionarServico(empresa.getServicos());
 				listagemselecservico.listar();
+				break;
+			case 13:
+				Listagem deletarconsumo = new DeletarConsumo(empresa.getClientes());
+				deletarconsumo.listar();
 				break;
 			default:
 				System.out.println("Operacao nao entendida");

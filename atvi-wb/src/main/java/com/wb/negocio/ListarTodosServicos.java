@@ -15,8 +15,8 @@ public class ListarTodosServicos extends Listagem {
 	public void listar() {
 		System.out.println("Lista de todos os produtos:");
 		for (Servico servico : servicos) {
-			System.out.println("Nome do serviao: " + servico.nomeservico);
-			System.out.println("Valor do serviao: " + servico.valorservico);
+			System.out.println("Nome do servico: " + servico.nomeservico);
+			System.out.println("Valor do servico: " + servico.valorservico);
 			System.out.println("--------------------------------------");
 		}
 	}

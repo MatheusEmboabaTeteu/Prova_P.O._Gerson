@@ -22,8 +22,8 @@ public class ListarTodosConsumos extends Listagem {
 			System.out.println("Lista de todos os servicos consumidos:");
 			for (Servico servico : servicoConsumidos) {
 				System.out.println("--------------------------------------");
-				System.out.println("Nome do serviço: " + servico.nomeservico);
-				System.out.println("Valor do serviço: " + servico.valorservico);
+				System.out.println("Nome do servico: " + servico.nomeservico);
+				System.out.println("Valor do servico: " + servico.valorservico);
 			}
 
 			System.out.println("Lista de todos os produtos consumidos:");
