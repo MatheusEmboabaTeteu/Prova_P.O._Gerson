@@ -74,7 +74,7 @@ public class App {
 				Listagem listagemservico = new ListarTodosServicos(empresa.getServicos());
 				listagemservico.listar();
 				break;
-			case 5:
+			case 8:
 				Listagem listagemConsumo = new ListarTodosConsumos(empresa.getClientes());
 				listagemConsumo.listar();
 				break;
