@@ -16,9 +16,9 @@ public class ListarTodosProdutos extends Listagem {
 		System.out.println("Lista de todos os produtos:");
 		for (Produto produto : produtos) {
 			System.out.println("Nome do produto: " + produto.nomeproduto);
-			System.out.println("Código do produto: " + produto.getCodigoProduto().getNumeroProduto());
+			System.out.println("Codigo do produto: " + produto.getCodigoProduto().getNumeroProduto());
 			System.out.println("Valor do produto: " + produto.valorproduto);
-			System.out.println("Data de criação: " + produto.getCodigoProduto().getDatacriacao());
+			System.out.println("Data de criacao: " + produto.getCodigoProduto().getDatacriacao());
 			System.out.println("--------------------------------------");
 		}
 	}

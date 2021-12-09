@@ -23,12 +23,12 @@ public class CadastroCliente extends Cadastro {
 
 	@Override
 	public void cadastrar() {
-		System.out.println("Início do cadastro do cliente");
+		System.out.println("Inicio do cadastro do cliente");
 		System.out.println("Por favor informe o nome do cliente:");
 		String nome = entrada.receberTexto();
 		System.out.println("Por favor informe o nome social do cliente:");
 		String nomeSocial = entrada.receberTexto();
-		System.out.println("Por favor informe gênero do cliente:");
+		System.out.println("Por favor informe genero do cliente:");
 		System.out.println("1 - Masculino");
 		System.out.println("2 - Feminino");
 		String genero =null;
@@ -46,7 +46,7 @@ public class CadastroCliente extends Cadastro {
 			break;
 		}
 		else {
-			System.out.println("Por favor escolha uma das opções:");
+			System.out.println("Por favor escolha uma das opcoes:");
 			System.out.println("1 - Masculino");
 			System.out.println("2 - Feminino");
 		}
@@ -55,7 +55,7 @@ public class CadastroCliente extends Cadastro {
 		System.out.println("Por favor informe o ddd do telefone do cliente");
 		entrada = new Entrada ();
 		String ddd = entrada.receberTexto();
-		System.out.println("Por favor informe o número do telefone do cliente");
+		System.out.println("Por favor informe o nï¿½mero do telefone do cliente");
 		entrada = new Entrada ();
 		String numero = entrada.receberTexto();
 
@@ -65,9 +65,9 @@ public class CadastroCliente extends Cadastro {
 		listanumero.add(numtelefones);
 		 
 		
-		System.out.println("Deseja adicionar outro número ?");
+		System.out.println("Deseja adicionar outro numero ?");
 		System.out.println("1 - Sim");
-		System.out.println("2 - Não");
+		System.out.println("2 - Nao");
 		
 		while (m==0) {		
 	    	int m = entrada.receberNumeroInteiro();
@@ -75,7 +75,7 @@ public class CadastroCliente extends Cadastro {
 				System.out.println("Por favor informe o ddd do telefone do cliente");
 				entrada = new Entrada ();
 				String ddd1 = entrada.receberTexto();
-				System.out.println("Por favor informe o número do telefone do cliente");
+				System.out.println("Por favor informe o nï¿½mero do telefone do cliente");
 				entrada = new Entrada ();
 				String numero1 = entrada.receberTexto();
 				numtelefones = new Telefone(ddd1, numero1);
@@ -88,18 +88,18 @@ public class CadastroCliente extends Cadastro {
 			break;
 		}
 		else {
-			System.out.println("Por favor escolha uma das opções:");
+			System.out.println("Por favor escolha uma das opcoes:");
 			System.out.println("1 - Sim");
-			System.out.println("2 - Não");
+			System.out.println("2 - Nao");
 		}
 	                  }
 				
 		
-		System.out.println("Por favor informe o número do rg:");
+		System.out.println("Por favor informe o numero do rg:");
 		entrada = new Entrada ();
 		String rgcodigo = entrada.receberTexto();
 		
-		System.out.println("Por favor informe a data de emissão do rg, no padrão dd/mm/yyyy:");
+		System.out.println("Por favor informe a data de emissao do rg, no padrao dd/mm/yyyy:");
 		entrada = new Entrada ();
 		String datarg = entrada.receberTexto();
 		
@@ -112,15 +112,15 @@ public class CadastroCliente extends Cadastro {
 		
 		System.out.println("Deseja adicionar outro rg ?");
 		System.out.println("1 - Sim");
-		System.out.println("2 - Não");
+		System.out.println("2 - Nao");
 		
 		while (m==0) {		
 	    	int m = entrada.receberNumeroInteiro();
 	    if (m==1) {
-				System.out.println("Por favor informe o número do rg:");
+				System.out.println("Por favor informe o numero do rg:");
 				entrada = new Entrada ();
 				String rgcodigo1 = entrada.receberTexto();
-				System.out.println("Por favor informe a data de emissão do rg, no padrão dd/mm/yyyy:");
+				System.out.println("Por favor informe a data de emissao do rg, no padrao dd/mm/yyyy:");
 				entrada = new Entrada ();
 				String datarg1 = entrada.receberTexto();
 				LocalDate dataEmissaorg1 = LocalDate.parse(datarg1, formato);
@@ -133,16 +133,16 @@ public class CadastroCliente extends Cadastro {
 			break;
 		}
 		else {
-			System.out.println("Por favor escolha uma das opções:");
+			System.out.println("Por favor escolha uma das opcoes:");
 			System.out.println("1 - Sim");
-			System.out.println("2 - Não");
+			System.out.println("2 - Nao");
 		}
 	                  }
 	
-		System.out.println("Por favor informe o número do cpf:");
+		System.out.println("Por favor informe o numero do cpf:");
 		entrada = new Entrada ();
 		String valor = entrada.receberTexto();
-		System.out.println("Por favor informe a data de emissão do cpf, no padrão dd/mm/yyyy:");
+		System.out.println("Por favor informe a data de emissao do cpf, no padrao dd/mm/yyyy:");
 		entrada = new Entrada ();
 		String data = entrada.receberTexto();
 		

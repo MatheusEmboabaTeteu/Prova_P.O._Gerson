@@ -22,16 +22,16 @@ public class SelecionarProduto extends Listagem {
 		for (Produto produto : produtos) {
 			System.out.println("Produto " + n);
 			System.out.println("Nome do produto: " + produto.nomeproduto);
-			System.out.println("Código do produto: " + produto.getCodigoProduto().getNumeroProduto());
+			System.out.println("Cï¿½digo do produto: " + produto.getCodigoProduto().getNumeroProduto());
 			System.out.println("Valor do produto: " + produto.valorproduto);
-			System.out.println("Data de criação: " + produto.getCodigoProduto().getDatacriacao());
+			System.out.println("Data de criacao: " + produto.getCodigoProduto().getDatacriacao());
 			System.out.println("--------------------------------------");
 			n = n + 1;
 		}
 		Produto editarproduto = null;
 		while (num == 0) {
 			Entrada entrada = new Entrada();
-			System.out.println("\n\n Escolha o número do produto que deseja editar.");
+			System.out.println("\n\n Escolha o nï¿½mero do produto que deseja editar.");
 			num = entrada.receberNumeroInteiro();
 			if (num <= n) {
 				editarproduto = produtos.get(num);
@@ -49,7 +49,7 @@ public class SelecionarProduto extends Listagem {
 		while (m == 10) {
 			System.out.println("Por favor informe o que deseja editar:");
 			System.out.println("1 - Nome do produto.");
-			System.out.println("2 - Código do produto.");
+			System.out.println("2 - Codigo do produto.");
 			System.out.println("3 - Valor do produto.");
 			System.out.println("4 - Data de cadastro do produto.");
 			System.out.println("5 - Deseja deletar o produto.");
@@ -69,7 +69,7 @@ public class SelecionarProduto extends Listagem {
 					editarproduto.setnomeproduto(nome);
 					break;
 				case 2:
-					System.out.println("Por favor informe o código do produto:");
+					System.out.println("Por favor informe o codigo do produto:");
 					entrada = new Entrada();
 					String codigoproduto = entrada.receberTexto();
 					editarproduto.getCodigoProduto().setNumeroproduto(codigoproduto);
@@ -81,7 +81,7 @@ public class SelecionarProduto extends Listagem {
 					editarproduto.setvalorproduto(valor);
 					break;
 				case 4:
-					System.out.println("Por favor informe a data de atual para cadastro do produto, no padrão dd/mm/yyyy:");
+					System.out.println("Por favor informe a data de atual para cadastro do produto, no padrao dd/mm/yyyy:");
 					entrada = new Entrada();
 					String dataproduto = entrada.receberTexto();
 

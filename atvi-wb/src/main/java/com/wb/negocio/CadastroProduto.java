@@ -19,14 +19,14 @@ public class CadastroProduto extends Cadastro {
 
 	@Override
 	public void cadastrar() {
-		System.out.println("Início do cadastro do Produto");
+		System.out.println("Inicio do cadastro do Produto");
 		System.out.println("Por favor informe o nome do Produto:");
 		String nomeproduto = entrada.receberTexto();
-		System.out.println("Por favor informe o código do produto:");
+		System.out.println("Por favor informe o codigo do produto:");
 		String numeroproduto = entrada.receberTexto();
 		System.out.println("Por favor informe o valor do produto:");
 		String valorproduto = entrada.receberTexto();
-		System.out.println("Por favor informe a data de atual para cadastro do produto, no padrão dd/mm/yyyy:");
+		System.out.println("Por favor informe a data de atual para cadastro do produto, no padrao dd/mm/yyyy:");
 		String datac = entrada.receberTexto();
 		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		LocalDate datacriacao = LocalDate.parse(datac, formato);

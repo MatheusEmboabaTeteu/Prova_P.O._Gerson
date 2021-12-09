@@ -15,12 +15,6 @@ public class ListarTodosConsumos extends Listagem {
 
 	@Override
 	public void listar() {
-
-		// para cada cliente, eu to acessando a lista de servicos consumidos deste
-		// respectivo menino
-		// foreach
-		// para cada cliente dentro de clientes
-		// cliente in clientes
 		for (Cliente cliente : clientes) {
 			System.out.println("Nome: " + cliente.getNome());
 			List<Servico> servicoConsumidos = cliente.getServicosConsumidos();

@@ -18,10 +18,10 @@ public class CadastroServico extends Cadastro {
 
 	@Override
 	public void cadastrar() {
-		System.out.println("Início do cadastro de serviço");
-		System.out.println("Por favor informe o nome do serviço:");
+		System.out.println("Inicio do cadastro de servico");
+		System.out.println("Por favor informe o nome do servico:");
 		String nome = entrada.receberTexto();
-		System.out.println("Por favor informe o valor do serviço:");
+		System.out.println("Por favor informe o valor do servico:");
 		String valor= entrada.receberTexto();
 		Servico servico = new Servico(nome,valor);
 		this.servicos.add(servico);

@@ -19,10 +19,10 @@ public class ListarTodosClientes extends Listagem {
 		for (Cliente cliente : clientes) {
 			System.out.println("Nome: " + cliente.getNome());
 			System.out.println("Nome social: " + cliente.nomeSocial);
-			System.out.println("Gênero: " + cliente.genero);
-			System.out.println("CPF e Data de Emissão: " + cliente.getCpf().getValor()+" " + cliente.getCpf().getDataEmissao());
+			System.out.println("Genero: " + cliente.genero);
+			System.out.println("CPF e Data de Emissao: " + cliente.getCpf().getValor()+" " + cliente.getCpf().getDataEmissao());
 			for (RG rgnumero : cliente.getRgs()){
-			System.out.println("RG e Data Emissão: " + rgnumero.getRgcodigo() + " " + rgnumero.getDataEmissao());
+			System.out.println("RG e Data Emissao: " + rgnumero.getRgcodigo() + " " + rgnumero.getDataEmissao());
 			}
 			for (Telefone tellnumero : cliente.getTelefones()){
 			System.out.println("Telefones: " + tellnumero.getDdd() + " " + tellnumero.getNumero());

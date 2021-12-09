@@ -18,16 +18,16 @@ public class SelecionarServico extends Listagem {
 	public void listar() {
 		System.out.println("Lista de todos os produtos:");
 		for (Servico servico : servicos) {
-			System.out.println("Serviço " + n);
-			System.out.println("Nome do serviço: " + servico.nomeservico);
-			System.out.println("Valor do serviço: " + servico.valorservico);
+			System.out.println("Servico " + n);
+			System.out.println("Nome do servico: " + servico.nomeservico);
+			System.out.println("Valor do servico: " + servico.valorservico);
 			System.out.println("--------------------------------------");
 			n = n + 1;
 		}
 		Servico editarservico = null;
 		while (num == 0) {
 			Entrada entrada = new Entrada();
-			System.out.println("\n\n Escolha o número do serviço que deseja editar.");
+			System.out.println("\n\n Escolha o numero do servico que deseja editar.");
 			num = entrada.receberNumeroInteiro();
 			if (num <= n) {
 				editarservico = servicos.get(num);
@@ -44,9 +44,9 @@ public class SelecionarServico extends Listagem {
 		int m = 10;
 		while (m == 10) {
 			System.out.println("Por favor informe o que deseja editar:");
-			System.out.println("1 - Nome do serviço.");
-			System.out.println("2 - Valor do serviço.");
-			System.out.println("3 - Deseja deletar o serviço.");
+			System.out.println("1 - Nome do servico.");
+			System.out.println("2 - Valor do servico.");
+			System.out.println("3 - Deseja deletar o servico.");
 			System.out.println("0 - Sair.");
 			Entrada entrada = new Entrada();
 			m = entrada.receberNumeroInteiro();
@@ -56,13 +56,13 @@ public class SelecionarServico extends Listagem {
 			if (m <= casos) {
 				switch (m) {
 				case 1:
-					System.out.println("Por favor informe o nome do serviço:");
+					System.out.println("Por favor informe o nome do servico:");
 					entrada = new Entrada();
 					String nome = entrada.receberTexto();
 					editarservico.setNomeServico(nome);
 					break;
 				case 2:
-					System.out.println("Por favor informe o valor do serviço:");
+					System.out.println("Por favor informe o valor do servico:");
 					entrada = new Entrada();
 					String valor = entrada.receberTexto();;
 					editarservico.setValorServico(valor);

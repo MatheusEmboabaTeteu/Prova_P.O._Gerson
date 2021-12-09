@@ -25,11 +25,11 @@ public class SelecionarCliente extends Listagem {
 			System.out.println("Cliente " + n);
 			System.out.println("Nome: " + cliente.getNome());
 			System.out.println("Nome social: " + cliente.nomeSocial);
-			System.out.println("Gênero: " + cliente.genero);
+			System.out.println("Genero: " + cliente.genero);
 			System.out.println(
-					"CPF e Data de Emissão: " + cliente.getCpf().getValor() + " " + cliente.getCpf().getDataEmissao());
+					"CPF e Data de Emissao: " + cliente.getCpf().getValor() + " " + cliente.getCpf().getDataEmissao());
 			for (RG rgnumero : cliente.getRgs()) {
-				System.out.println("RG e Data Emissão: " + rgnumero.getRgcodigo() + " " + rgnumero.getDataEmissao());
+				System.out.println("RG e Data Emissao: " + rgnumero.getRgcodigo() + " " + rgnumero.getDataEmissao());
 			}
 			for (Telefone tellnumero : cliente.getTelefones()) {
 				System.out.println("Telefones: " + tellnumero.getDdd() + " " + tellnumero.getNumero());
@@ -42,7 +42,7 @@ public class SelecionarCliente extends Listagem {
 		Cliente editarcliente = null;
 		while (num == 0) {
 			Entrada entrada = new Entrada();
-			System.out.println("\n\n Escolha o número do cliente que deseja editar.");
+			System.out.println("\n\n Escolha o numero do cliente que deseja editar.");
 			num = entrada.receberNumeroInteiro();
 			
 			if (num <= n) {
@@ -60,9 +60,9 @@ public class SelecionarCliente extends Listagem {
 			System.out.println("Por favor informe o que deseja editar:");
 			System.out.println("1 - Nome.");
 			System.out.println("2 - Nome social.");
-			System.out.println("3 - Gênero.");
-			System.out.println("4 - CPF e Data de emissão.");
-			System.out.println("5 - RG e Data de emissão.");
+			System.out.println("3 - Genero.");
+			System.out.println("4 - CPF e Data de emissao.");
+			System.out.println("5 - RG e Data de emissao.");
 			System.out.println("6 - Telefones.");
 			System.out.println("7 - Deseja deletar o cliente.");
 			System.out.println("0 - Sair.");
@@ -85,7 +85,7 @@ public class SelecionarCliente extends Listagem {
 					editarcliente.nomeSocial = nomeSocial; 
 					break;
 				case 3:
-					System.out.println("Por favor informe gênero do cliente:");
+					System.out.println("Por favor informe gï¿½nero do cliente:");
 					System.out.println("1 - Masculino");
 					System.out.println("2 - Feminino");
 					entrada = new Entrada();
@@ -103,7 +103,7 @@ public class SelecionarCliente extends Listagem {
 							n = 0;
 							break;
 						} else {
-							System.out.println("Por favor escolha uma das opções:");
+							System.out.println("Por favor escolha uma das opcoes:");
 							System.out.println("1 - Masculino");
 							System.out.println("2 - Feminino");
 						}
@@ -111,11 +111,11 @@ public class SelecionarCliente extends Listagem {
 					editarcliente.genero = genero;
 					break;
 				case 4:
-					System.out.println("Por favor informe o número do CPF:");
+					System.out.println("Por favor informe o numero do CPF:");
 					entrada = new Entrada ();
 					String cpfcodigo = entrada.receberTexto();
 					
-					System.out.println("Por favor informe a data de emissão do CPF, no padrão dd/mm/yyyy:");
+					System.out.println("Por favor informe a data de emissao do CPF, no padrao dd/mm/yyyy:");
 					entrada = new Entrada ();
 					String datacpf = entrada.receberTexto();
 					
@@ -128,7 +128,7 @@ public class SelecionarCliente extends Listagem {
 				case 5:
 					n = 0;
 					while (n == 0) {
-						System.out.println("Por favor escolha uma opção:");
+						System.out.println("Por favor escolha uma opcao:");
 						System.out.println("1 - Deseja editar um RG.");
 						System.out.println("2 - Deseja adicionar mais um RG.");
 						
@@ -140,19 +140,19 @@ public class SelecionarCliente extends Listagem {
 							f = 0;
 							for (RG rgnumero : editarcliente.getRgs()) {
 								System.out.println(
-										"RG - Número " + f + " - " + rgnumero.getRgcodigo() + "  " + rgnumero.getDataEmissao());
+										"RG - Nï¿½mero " + f + " - " + rgnumero.getRgcodigo() + "  " + rgnumero.getDataEmissao());
 								f = f + 1;
 							}
 							n = 0;
 							while (n == 0) {
-								System.out.println("Qual dos RGs deseja editar ? Por favor informe o número:");
+								System.out.println("Por favor informe o numero do RG que deseja editar:");
 								entrada = new Entrada();
 								n = entrada.receberNumeroInteiro();
 								if (n <= f) {
 									System.out.println("Por favor informe rg do cliente:");
 									entrada = new Entrada();
 									String rgcodigo = entrada.receberTexto();
-									System.out.println("Por favor informe a data de emissão do rg, no padrão dd/mm/yyyy:");
+									System.out.println("Por favor informe a data de emissao do rg, no padrao dd/mm/yyyy:");
 									entrada = new Entrada();
 									String datarg = entrada.receberTexto();
 									DateTimeFormatter formato2 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -162,7 +162,7 @@ public class SelecionarCliente extends Listagem {
 									n = 0;
 									break;
 								} else {
-									System.out.println("Por favor escolha uma das opções acima");
+									System.out.println("Por favor escolha uma das opcoes acima");
 									n = 0;
 									continue;
 								}
@@ -173,7 +173,7 @@ public class SelecionarCliente extends Listagem {
 							System.out.println("Por favor informe rg do cliente:");
 							entrada = new Entrada();
 							String rgcodigo1 = entrada.receberTexto();
-							System.out.println("Por favor informe a data de emissão do rg, no padrão dd/mm/yyyy:");
+							System.out.println("Por favor informe a data de emissao do rg, no padrao dd/mm/yyyy:");
 							entrada = new Entrada();
 							String datarg1 = entrada.receberTexto();
 							DateTimeFormatter formato3 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -185,7 +185,7 @@ public class SelecionarCliente extends Listagem {
 						}
 
 						else {
-							System.out.println("Por favor escolha uma das opções acima:");
+							System.out.println("Por favor escolha uma das opcoes acima:");
 							n = 0;
 							continue;
 						}
@@ -193,7 +193,7 @@ public class SelecionarCliente extends Listagem {
 						while (n == 0) {
 							System.out.println("Deseja editar ou adicionar outro rg ?");
 							System.out.println("1 - Sim");
-							System.out.println("2 - Não");
+							System.out.println("2 - Nao");
 							entrada = new Entrada();
 							n = entrada.receberNumeroInteiro();
 							if (n == 1) {
@@ -214,9 +214,9 @@ public class SelecionarCliente extends Listagem {
 				case 6:
 					n = 0;
 					while (n == 0) {
-						System.out.println("Por favor escolha uma opção:");
-						System.out.println("1 - Deseja editar um número.");
-						System.out.println("2 - Deseja adicionar mais um número.");
+						System.out.println("Por favor escolha uma opcao:");
+						System.out.println("1 - Deseja editar um numero.");
+						System.out.println("2 - Deseja adicionar mais um numero.");
 						
 						List<Telefone> telefones = editarcliente.getTelefones();
 						
@@ -227,19 +227,19 @@ public class SelecionarCliente extends Listagem {
 							f = 0;
 							for (Telefone tellnumero : editarcliente.getTelefones()) {
 								System.out.println(
-										"Telefone - Número " + f + " - " + tellnumero.getDdd() + " " + tellnumero.getNumero());
+										"Telefone - Numero " + f + " - " + tellnumero.getDdd() + " " + tellnumero.getNumero());
 								f = f + 1;
 							}
 							n = 0;
 							while (n == 0) {
-								System.out.println("Qual dos Telefones deseja editar? Por favor informe o número:");
+								System.out.println("Qual dos Telefones deseja editar? Por favor informe o numero:");
 								entrada = new Entrada();
 								n = entrada.receberNumeroInteiro();
 								if (n <= f) {
 									System.out.println("Por favor informe o ddd do telefone do cliente:");
 									entrada = new Entrada();
 									String ddd = entrada.receberTexto();
-									System.out.println("Por favor informe o número do telefone do cliente:");
+									System.out.println("Por favor informe o numero do telefone do cliente:");
 									entrada = new Entrada();
 									String numero = entrada.receberTexto();
 									Telefone tel = telefones.get(n);
@@ -247,7 +247,7 @@ public class SelecionarCliente extends Listagem {
 									n = 0;
 									break;
 								} else {
-									System.out.println("Por favor escolha uma das opções acima:");
+									System.out.println("Por favor escolha uma das opcoes acima:");
 									n = 0;
 									continue;
 								}
@@ -258,7 +258,7 @@ public class SelecionarCliente extends Listagem {
 							System.out.println("Por favor informe o ddd do telefone do cliente:");
 							entrada = new Entrada();
 							String ddd1 = entrada.receberTexto();
-							System.out.println("Por favor informe o número do telefone do cliente:");
+							System.out.println("Por favor informe o nï¿½mero do telefone do cliente:");
 							entrada = new Entrada();
 							String numero1 = entrada.receberTexto();
 							Telefone tel = new Telefone(ddd1, numero1);
@@ -267,15 +267,15 @@ public class SelecionarCliente extends Listagem {
 						}
 
 						else {
-							System.out.println("Por favor escolha uma das opções acima:");
+							System.out.println("Por favor escolha uma das opcoes acima:");
 							n = 0;
 							continue;
 						}
 						int a = 0;
 						while (n == 0) {
-							System.out.println("Deseja editar ou adicionar outro número ?");
+							System.out.println("Deseja editar ou adicionar outro nï¿½mero ?");
 							System.out.println("1 - Sim");
-							System.out.println("2 - Não");
+							System.out.println("2 - Nao");
 							entrada = new Entrada();
 							n = entrada.receberNumeroInteiro();
 							if (n == 1) {
