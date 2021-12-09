@@ -19,14 +19,14 @@ public class ListarTodosConsumos extends Listagem {
 			System.out.println("Nome: " + cliente.getNome());
 			List<Servico> servicoConsumidos = cliente.getServicosConsumidos();
 			List<Produto> produtoConsumidos = cliente.getProdutosConsumidos();
-			System.out.println("Lista de todos os servicos consumidos:");
+			System.out.println("\n Lista de todos os servicos consumidos:");
 			for (Servico servico : servicoConsumidos) {
 				System.out.println("--------------------------------------");
 				System.out.println("Nome do servico: " + servico.nomeservico);
 				System.out.println("Valor do servico: " + servico.valorservico);
 			}
 
-			System.out.println("Lista de todos os produtos consumidos:");
+			System.out.println("\n Lista de todos os produtos consumidos:");
 			for (Produto produto : produtoConsumidos) {
 				System.out.println("--------------------------------------");
 				System.out.println("Nome do produto: " + produto.nomeproduto);

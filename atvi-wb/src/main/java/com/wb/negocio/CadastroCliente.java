@@ -55,7 +55,7 @@ public class CadastroCliente extends Cadastro {
 		System.out.println("Por favor informe o ddd do telefone do cliente");
 		entrada = new Entrada ();
 		String ddd = entrada.receberTexto();
-		System.out.println("Por favor informe o n�mero do telefone do cliente");
+		System.out.println("Por favor informe o numero do telefone do cliente");
 		entrada = new Entrada ();
 		String numero = entrada.receberTexto();
 
@@ -75,7 +75,7 @@ public class CadastroCliente extends Cadastro {
 				System.out.println("Por favor informe o ddd do telefone do cliente");
 				entrada = new Entrada ();
 				String ddd1 = entrada.receberTexto();
-				System.out.println("Por favor informe o n�mero do telefone do cliente");
+				System.out.println("Por favor informe o numero do telefone do cliente");
 				entrada = new Entrada ();
 				String numero1 = entrada.receberTexto();
 				numtelefones = new Telefone(ddd1, numero1);
@@ -88,7 +88,7 @@ public class CadastroCliente extends Cadastro {
 			break;
 		}
 		else {
-			System.out.println("Por favor escolha uma das opcoes:");
+			System.out.println("Deseja adicionar outro numero ?");
 			System.out.println("1 - Sim");
 			System.out.println("2 - Nao");
 		}
@@ -133,7 +133,7 @@ public class CadastroCliente extends Cadastro {
 			break;
 		}
 		else {
-			System.out.println("Por favor escolha uma das opcoes:");
+			System.out.println("Deseja adicionar outro rg ?");
 			System.out.println("1 - Sim");
 			System.out.println("2 - Nao");
 		}
