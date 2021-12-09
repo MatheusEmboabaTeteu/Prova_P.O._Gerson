@@ -72,6 +72,7 @@ public class SelecionarCliente extends Listagem {
 			m = entrada.receberNumeroInteiro();
 			if (m == 0) {break;}
 			if (m <= casos) {
+				DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 				switch (m) {
 				case 1:
 					System.out.println("Por favor informe o nome do cliente:");
@@ -121,7 +122,6 @@ public class SelecionarCliente extends Listagem {
 					entrada = new Entrada ();
 					String datacpf = entrada.receberTexto();
 					
-					DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 					LocalDate dataEmissaocpf = LocalDate.parse(datacpf, formato);
 					CPF cpfnovo = new CPF(dataEmissaocpf, cpfcodigo);
 					editarcliente.setCpf(cpfnovo);
@@ -133,7 +133,7 @@ public class SelecionarCliente extends Listagem {
 						System.out.println("Por favor escolha uma opcao:");
 						System.out.println("1 - Deseja editar um RG.");
 						System.out.println("2 - Deseja adicionar mais um RG.");
-						System.out.println("3 - Sair.");
+						System.out.println("0 - Sair.");
 												
 						List<RG> rgs = editarcliente.getRgs();
 						
@@ -144,12 +144,13 @@ public class SelecionarCliente extends Listagem {
 						if (n == 1) {
 							f = 0;
 							n = 0;
-							for (RG rgnumero : editarcliente.getRgs()){
+							for (RG rgnumero : rgs){
 								System.out.println("RG Numero " + f);
 								System.out.println("RG - "+ rgnumero.getRgcodigo() + "  " + rgnumero.getDataEmissao());
 								f = f + 1;
 								}
 							while (n == 0) {
+								
 								System.out.println("Por favor informe o numero do RG que deseja editar:");
 								entrada = new Entrada();
 								n = entrada.receberNumeroInteiro();
@@ -160,10 +161,7 @@ public class SelecionarCliente extends Listagem {
 									System.out.println("Por favor informe a data de emissao do rg, no padrao dd/mm/yyyy:");
 									entrada = new Entrada();
 									String datarg20 = entrada.receberTexto();
-									
-									DateTimeFormatter formato20 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-									LocalDate dataEmissaorg = LocalDate.parse(datarg20, formato20);
-									
+									LocalDate dataEmissaorg = LocalDate.parse(datarg20, formato);
 									RG rgslist = rgs.get(n);
 									rgslist.setRg(dataEmissaorg,rgcodigo);
 									n = 0;
@@ -183,8 +181,8 @@ public class SelecionarCliente extends Listagem {
 							System.out.println("Por favor informe a data de emissao do rg, no padrao dd/mm/yyyy:");
 							entrada = new Entrada();
 							String datarg1 = entrada.receberTexto();
-							DateTimeFormatter formato3 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-							LocalDate dataEmissaorg1 = LocalDate.parse(datarg1, formato3);
+							
+							LocalDate dataEmissaorg1 = LocalDate.parse(datarg1, formato);
 							RG rgnovo = new RG (dataEmissaorg1,rgcodigo1);
 							editarcliente.getRgs().add(rgnovo);
 							
@@ -224,15 +222,17 @@ public class SelecionarCliente extends Listagem {
 						System.out.println("Por favor escolha uma opcao:");
 						System.out.println("1 - Deseja editar um numero.");
 						System.out.println("2 - Deseja adicionar mais um numero.");
+						System.out.println("0 - Sair.");
 						
 						List<Telefone> telefones = editarcliente.getTelefones();
 						
 
 						entrada = new Entrada();
 						n = entrada.receberNumeroInteiro();
+						if(n==0) {break;}
 						if (n == 1) {
 							f = 0;
-							for (Telefone tellnumero : editarcliente.getTelefones()) {
+							for (Telefone tellnumero : telefones) {
 								System.out.println(
 										"Telefone - Numero " + f + " - " + tellnumero.getDdd() + " " + tellnumero.getNumero());
 								f = f + 1;
@@ -265,7 +265,7 @@ public class SelecionarCliente extends Listagem {
 							System.out.println("Por favor informe o ddd do telefone do cliente:");
 							entrada = new Entrada();
 							String ddd1 = entrada.receberTexto();
-							System.out.println("Por favor informe o n�mero do telefone do cliente:");
+							System.out.println("Por favor informe o numero do telefone do cliente:");
 							entrada = new Entrada();
 							String numero1 = entrada.receberTexto();
 							Telefone tel = new Telefone(ddd1, numero1);
