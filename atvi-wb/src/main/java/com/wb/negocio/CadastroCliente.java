@@ -2,7 +2,6 @@ package com.wb.negocio;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 
 import com.wb.io.Entrada;
@@ -51,19 +50,29 @@ public class CadastroCliente extends Cadastro {
 			System.out.println("2 - Feminino");
 		}
 	                  }
-	
+		
+		System.out.println("Por favor informe o numero do cpf:");
+		entrada = new Entrada ();
+		String valor = entrada.receberTexto();
+		System.out.println("Por favor informe a data de emissao do cpf, no padrao dd/mm/yyyy:");
+		entrada = new Entrada ();
+		String data = entrada.receberTexto();
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		LocalDate dataEmissao = LocalDate.parse(data, formato);
+		CPF cpf = new CPF(dataEmissao, valor);
+		Cliente cliente = new Cliente(nome, nomeSocial, genero, cpf, null, null);
+		this.clientes.add(cliente);
+		
+		
 		System.out.println("Por favor informe o ddd do telefone do cliente");
 		entrada = new Entrada ();
 		String ddd = entrada.receberTexto();
 		System.out.println("Por favor informe o numero do telefone do cliente");
 		entrada = new Entrada ();
 		String numero = entrada.receberTexto();
-
 		
-		ArrayList<Telefone> listanumero = new ArrayList<>();
-		Telefone numtelefones= new Telefone ( ddd, numero);
-		listanumero.add(numtelefones);
-		 
+		Telefone tel = new Telefone(ddd, numero);
+		cliente.getTelefones().add(tel); 		
 		
 		System.out.println("Deseja adicionar outro numero ?");
 		System.out.println("1 - Sim");
@@ -78,8 +87,8 @@ public class CadastroCliente extends Cadastro {
 				System.out.println("Por favor informe o numero do telefone do cliente");
 				entrada = new Entrada ();
 				String numero1 = entrada.receberTexto();
-				numtelefones = new Telefone(ddd1, numero1);
-				listanumero.add(numtelefones);
+				Telefone tell = new Telefone(ddd1, numero1);
+				cliente.getTelefones().add(tell);
 				m=0;
 				}
 		
@@ -103,12 +112,9 @@ public class CadastroCliente extends Cadastro {
 		entrada = new Entrada ();
 		String datarg = entrada.receberTexto();
 		
-		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		LocalDate dataEmissaorg = LocalDate.parse(datarg, formato);
-		
-		ArrayList<RG>listrg = new ArrayList<>();
-		RG numrg = new RG (dataEmissaorg, rgcodigo);
-		listrg.add(numrg);
+		RG numrg = new RG (dataEmissaorg,rgcodigo);
+		cliente.getRgs().add(numrg);
 		
 		System.out.println("Deseja adicionar outro rg ?");
 		System.out.println("1 - Sim");
@@ -124,8 +130,8 @@ public class CadastroCliente extends Cadastro {
 				entrada = new Entrada ();
 				String datarg1 = entrada.receberTexto();
 				LocalDate dataEmissaorg1 = LocalDate.parse(datarg1, formato);
-				numrg = new RG( dataEmissaorg1, rgcodigo1);
-				listrg.add(numrg);
+				RG numrg1 = new RG (dataEmissaorg1,rgcodigo1);
+				cliente.getRgs().add(numrg1);
 				m=0;
 				}
 		if (m==2) {
@@ -137,19 +143,7 @@ public class CadastroCliente extends Cadastro {
 			System.out.println("1 - Sim");
 			System.out.println("2 - Nao");
 		}
-	                  }
-	
-		System.out.println("Por favor informe o numero do cpf:");
-		entrada = new Entrada ();
-		String valor = entrada.receberTexto();
-		System.out.println("Por favor informe a data de emissao do cpf, no padrao dd/mm/yyyy:");
-		entrada = new Entrada ();
-		String data = entrada.receberTexto();
-		
-		LocalDate dataEmissao = LocalDate.parse(data, formato);
-		CPF cpf = new CPF(dataEmissao, valor);
-		Cliente cliente = new Cliente(nome, nomeSocial, genero, cpf, listrg, listanumero);
-		this.clientes.add(cliente);
+	      }
 	}
 }
 	

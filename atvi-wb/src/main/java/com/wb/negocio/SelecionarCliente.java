@@ -129,7 +129,7 @@ public class SelecionarCliente extends Listagem {
 					
 				case 5:
 					n = 0;
-					while (n == 0) {
+					while (true) {
 						System.out.println("Por favor escolha uma opcao:");
 						System.out.println("1 - Deseja editar um RG.");
 						System.out.println("2 - Deseja adicionar mais um RG.");
@@ -144,13 +144,13 @@ public class SelecionarCliente extends Listagem {
 						if (n == 1) {
 							f = 0;
 							n = 0;
-							for (RG rgnumero : rgs){
+							List<RG> rgnumero = editarcliente.getRgs();
+							for (RG rgnum : rgnumero){
 								System.out.println("RG Numero " + f);
-								System.out.println("RG - "+ rgnumero.getRgcodigo() + "  " + rgnumero.getDataEmissao());
+								System.out.println("RG - "+ rgnum.getRgcodigo() + "  " + rgnum.getDataEmissao());
 								f = f + 1;
 								}
-							while (n == 0) {
-								
+							while (true) {
 								System.out.println("Por favor informe o numero do RG que deseja editar:");
 								entrada = new Entrada();
 								n = entrada.receberNumeroInteiro();
@@ -162,14 +162,15 @@ public class SelecionarCliente extends Listagem {
 									entrada = new Entrada();
 									String datarg20 = entrada.receberTexto();
 									LocalDate dataEmissaorg = LocalDate.parse(datarg20, formato);
+									
 									RG rgslist = rgs.get(n);
-									rgslist.setRg(dataEmissaorg,rgcodigo);
+									rgslist.setRg(dataEmissaorg,rgcodigo);								
+									
 									n = 0;
 									break;
 								} else {
 									System.out.println("Por favor escolha uma das opcoes acima");
 									n = 0;
-									continue;
 								}
 							}
 						}
@@ -192,40 +193,18 @@ public class SelecionarCliente extends Listagem {
 						else {
 							System.out.println("Por favor escolha uma das opcoes acima:");
 							n = 0;
-							continue;
-						}
-						int a = 0;
-						while (n == 0) {
-							System.out.println("Deseja editar ou adicionar outro rg ?");
-							System.out.println("1 - Sim");
-							System.out.println("2 - Nao");
-							entrada = new Entrada();
-							n = entrada.receberNumeroInteiro();
-							if (n == 1) {
-								break;
 							}
-							if (n == 2) {
-								a = 1;
-								break;
-							}
-							n = 0;
-						}
-						if (a == 1) {
-							a=0;
-							break;
-						}
 					}
 					break;
 				case 6:
 					n = 0;
-					while (n == 0) {
+					while (true) {
 						System.out.println("Por favor escolha uma opcao:");
 						System.out.println("1 - Deseja editar um numero.");
 						System.out.println("2 - Deseja adicionar mais um numero.");
 						System.out.println("0 - Sair.");
 						
 						List<Telefone> telefones = editarcliente.getTelefones();
-						
 
 						entrada = new Entrada();
 						n = entrada.receberNumeroInteiro();
@@ -233,12 +212,11 @@ public class SelecionarCliente extends Listagem {
 						if (n == 1) {
 							f = 0;
 							for (Telefone tellnumero : telefones) {
-								System.out.println(
-										"Telefone - Numero " + f + " - " + tellnumero.getDdd() + " " + tellnumero.getNumero());
+								System.out.println("Telefone - Numero " + f + " - " + tellnumero.getDdd() + " " + tellnumero.getNumero());
 								f = f + 1;
 							}
 							n = 0;
-							while (n == 0) {
+							while (true) {
 								System.out.println("Qual dos Telefones deseja editar? Por favor informe o numero:");
 								entrada = new Entrada();
 								n = entrada.receberNumeroInteiro();
@@ -256,7 +234,6 @@ public class SelecionarCliente extends Listagem {
 								} else {
 									System.out.println("Por favor escolha uma das opcoes acima:");
 									n = 0;
-									continue;
 								}
 							}
 						}
@@ -276,27 +253,6 @@ public class SelecionarCliente extends Listagem {
 						else {
 							System.out.println("Por favor escolha uma das opcoes acima:");
 							n = 0;
-							continue;
-						}
-						int a = 0;
-						while (n == 0) {
-							System.out.println("Deseja editar ou adicionar outro n�mero ?");
-							System.out.println("1 - Sim");
-							System.out.println("2 - Nao");
-							entrada = new Entrada();
-							n = entrada.receberNumeroInteiro();
-							if (n == 1) {
-								break;
-							}
-							if (n == 2) {
-								a = 1;
-								break;
-							}
-							n = 0;
-						}
-						if (a == 1) {
-							a=0;
-							break;
 						}
 					}break;
 				case 7:

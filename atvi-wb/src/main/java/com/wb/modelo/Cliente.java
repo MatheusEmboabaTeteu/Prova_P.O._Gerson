@@ -14,7 +14,7 @@ public class Cliente {
 	private List<Telefone> telefones;
 	private List<Produto> produtosConsumidos;
 	private List<Servico> servicosConsumidos;
-	public Cliente(String nome, String nomeSocial,String  genero, CPF cpf,ArrayList<RG> listrg,ArrayList<Telefone> listanumero ) {
+	public Cliente(String nome, String nomeSocial,String  genero, CPF cpf,List<RG> listrg,List<Telefone> listanumero ) {
 		this.nome = nome;
 		this.nomeSocial = nomeSocial;
 		this.genero = genero;

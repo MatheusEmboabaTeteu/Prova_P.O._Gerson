@@ -22,7 +22,7 @@ public class SelecionarProduto extends Listagem {
 		for (Produto produto : produtos) {
 			System.out.println("Produto " + n);
 			System.out.println("Nome do produto: " + produto.nomeproduto);
-			System.out.println("C�digo do produto: " + produto.getCodigoProduto().getNumeroProduto());
+			System.out.println("Codigo do produto: " + produto.getCodigoProduto().getNumeroProduto());
 			System.out.println("Valor do produto: " + produto.valorproduto);
 			System.out.println("Data de criacao: " + produto.getCodigoProduto().getDatacriacao());
 			System.out.println("--------------------------------------");
@@ -31,7 +31,7 @@ public class SelecionarProduto extends Listagem {
 		Produto editarproduto = null;
 		while (num == 0) {
 			Entrada entrada = new Entrada();
-			System.out.println("\n\n Escolha o n�mero do produto que deseja editar.");
+			System.out.println("\n\n Escolha o numero do produto que deseja editar.");
 			num = entrada.receberNumeroInteiro();
 			if (num <= n) {
 				editarproduto = produtos.get(num);
